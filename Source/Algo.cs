@@ -218,8 +218,9 @@ public sealed partial class Graph<N, E>
                 foreach (var move in batchMoving)
                 {
                     communityAssignments[move.NodeId] = move.Community;
-                    currentModularity = MathF.Max(currentModularity, move.Modularity);
                 }
+
+                currentModularity = ComputeModularity(communityAssignments, null);
 
                 // clear the bag
                 batchMoving.Clear();
@@ -251,8 +252,9 @@ public sealed partial class Graph<N, E>
                 foreach (var move in batchMoving)
                 {
                     communityAssignments[move.NodeId] = move.Community;
-                    currentModularity = MathF.Max(currentModularity, move.Modularity);
                 }
+
+                currentModularity = ComputeModularity(communityAssignments, null);
 
                 // clear the moves
                 batchMoving.Clear();
