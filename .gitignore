@@ -1,0 +1,10 @@
+# .NET build output
+bin/
+obj/
+
+# VSCode IDE
+.vscode/
+
+# NoMake build system
+.nomake_files/
+tmp/
